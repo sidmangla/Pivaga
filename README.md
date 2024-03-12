@@ -50,6 +50,8 @@ yolov7/brand_custom.py -> File which reads the video file, detects the brands na
                           
 Excel file -> **mall_walk.xls** (link: https://github.com/sidmangla/Pivaga/blob/master/Mall_walk_brand.xls)
 
+Alternate link: https://docs.google.com/spreadsheets/d/15oYpY6IxclrsSb9eKP322vR7kCEvf5Zy/edit?usp=sharing&ouid=117413346113894389603&rtpof=true&sd=true
+
 
 **Challenges:**
 1. Accuracy: Using Yolov7 improved a lot of Accuracy.
