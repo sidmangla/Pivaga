@@ -48,7 +48,7 @@ yolov7/brand_custom.py -> File which reads the video file, detects the brands na
                           We create a dictionary of brands and append the fist frame, last frame, missed frame for the corresponding brand
                           then we create a excel file and write the information in the excel file.
                           
-Excel file -> **mall_walk.xls**
+Excel file -> **mall_walk.xls** (link: https://github.com/sidmangla/Pivaga/blob/master/Mall_walk_brand.xls)
 
 
 **Challenges:**
