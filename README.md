@@ -84,7 +84,7 @@ mAP(0.5-0.9): 0.745
 7. Cost-effective: The fps without writing the video was quite good. got 13 fps while testing. Therefore this detection system can be deployed on edge devices and would not require heavy GPUs
                     It utilized only 1.5 GB RAM while testing. (user-friendly).
 
-**Command:** !python3 brand_custom.py --weights yolov7/trained/v7_best.pt --img 960 --conf 0.4 --source yolov7/videos/input/city_6mins.mp4
+**Command:** python3 brand_custom.py --weights yolov7/trained/v7_best.pt --img 960 --conf 0.4 --source yolov7/videos/input/city_6mins.mp4
 Note: For a couple of classes the confidence **0.4** was used, for the rest 44 classes **0.7** confidence was used
 
 **The accuracy of the Detection model was good and with some processing, I was able to get multiple timings of occurrence and disappearance of the shops from the video with very high accuracy. On the other hand was not able to train a**
