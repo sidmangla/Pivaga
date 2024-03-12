@@ -1,6 +1,11 @@
-Approach:
+**Approach:**
 
-Since it's a very crowded and fast-paced environment I have used the Yolov7 model for object detection
+Since it's a very crowded and fast-paced environment I have used the Yolov7 model for brand and logo detection and Paddle OCR for text recognition.
+
+Reasons for choosing Paddle:
+1. High Accuracy with text at different angles and Orientations.
+2. Fast Processing
+3. High Accuracy with blurred or noisy images (to a limit).
 
 Pre-trained model links:
 
@@ -16,15 +21,15 @@ yolov7 best: https://drive.google.com/file/d/1-kfHV-7VTgJE-yh9mJ8qsRF4c4KPq2Fr/v
 yolov7-tiny best: https://drive.google.com/file/d/1-QJCAIxEdFham5y7CgEA0KMntxuvQfTI/view?usp=sharing
 
 
-For Paddle OCR: used pre-trained model for english language
+For Paddle OCR: used a pre-trained model for English language
 
   Detection_model - https://paddleocr.bj.bcebos.com/PP-OCRv3/english/en_PP-OCRv3_det_infer.tar
   
-  Reacognition model - https://paddleocr.bj.bcebos.com/PP-OCRv4/english/en_PP-OCRv4_rec_infer.tar
+  Recognition model - https://paddleocr.bj.bcebos.com/PP-OCRv4/english/en_PP-OCRv4_rec_infer.tar
   
   Text Direction classification model - https://paddleocr.bj.bcebos.com/dygraph_v2.0/ch/ch_ppocr_mobile_v2.0_cls_infer.tar
   
-  charaacter dictionary path - > PaddleOCR/ppocr/utils/en_dict.txt
+  character dictionary path - > PaddleOCR/ppocr/utils/en_dict.txt
 
 
   
@@ -37,23 +42,26 @@ video file : youtube link -> https://youtu.be/-QsCM4ddr-g?si=3BMbWyYDTsecLRPV  (
  
 ouput video link -> https://drive.google.com/file/d/1Dw4ekEaWwQvaDTUpAJ90WLllZR5woY_m/view?usp=sharing
 
-Files used:
+**Files:**
 
-yolov7/extract.py - > to extract images from videos for annotation purpose
+**yolov7/extract.py** - > to extract images from videos for annotation purposes
 
-yolov7/no_annotation.py -> to create empty txt files for images having no annotations
+**yolov7/no_annotation.py** -> to create empty txt files for images having no annotations
+
+**Annotation tool used** : labelImg, CVAT  
 
 **brand_custom.py** -> File which reads the video file, and detects the brand's names and logo using the trained model. Once we get the coordinates from the detections made. we pass the cropped images to paddle OCR
                           Paddle OCR then gives the output using the pre-trained models mentioned above.
                           We create a dictionary of brands and append the first frame, last frame, and missed frame for the corresponding brands
                           then we create an Excel file and write the information in the Excel file.
                           
-Excel file -> **mall_walk.xls** (link: https://github.com/sidmangla/Pivaga/blob/master/Mall_walk_brand.xls)
+**Excel file** -> **mall_walk.xls** (link: https://github.com/sidmangla/Pivaga/blob/master/Mall_walk_brand.xls)
 
 Alternate link: https://docs.google.com/spreadsheets/d/15oYpY6IxclrsSb9eKP322vR7kCEvf5Zy/edit?usp=sharing&ouid=117413346113894389603&rtpof=true&sd=true
 
 
 **Challenges:**
+
 1. Accuracy: Using Yolov7 improved a lot of Accuracy.
 
 Params: These parameters increased the accuracy further changing the inference size from 640 to 960 improved accuracy. Wanted to multi-scale training but it was running out of memory as inference sizes in multi-scale were going to 1300 and son on.
