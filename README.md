@@ -43,10 +43,10 @@ yolov7/extract.py - > to extract images from videos for annotation purpose
 
 yolov7/no_annotation.py -> to create empty txt files for images having no annotations
 
-yolov7/brand_custom.py -> File which reads the video file, detects the brands names and logo using the trained model. Once we get the coordinates from the detections made. we pass the cropped images to paddle OCR
-                          Paddle OCR then gives the output using pre trained models mentioned above.
-                          We create a dictionary of brands and append the fist frame, last frame, missed frame for the corresponding brand
-                          then we create a excel file and write the information in the excel file.
+**brand_custom.py** -> File which reads the video file, and detects the brand's names and logo using the trained model. Once we get the coordinates from the detections made. we pass the cropped images to paddle OCR
+                          Paddle OCR then gives the output using the pre-trained models mentioned above.
+                          We create a dictionary of brands and append the first frame, last frame, and missed frame for the corresponding brands
+                          then we create an Excel file and write the information in the Excel file.
                           
 Excel file -> **mall_walk.xls** (link: https://github.com/sidmangla/Pivaga/blob/master/Mall_walk_brand.xls)
 
@@ -71,7 +71,7 @@ mAP(0.5): 0.962
 mAP(0.5-0.9): 0.745 
 
 2. Different lighting conditions and different angles of brands and logo
-   **solution**: Used Augmentation by tweaking Saturation, Brightness, and contrast of images by 25%. Therefore mitigating the light issues. Also flipped, and rotated the images to counter different angles of the logos and brand names
+   **Solution**: Used Augmentation by tweaking the Saturation, Brightness, and contrast of images by 25%. Therefore mitigating the light issues. Also flipped, and rotated the images to counter different angles of the logos and brand names
    
 4. Occlusions: 
 **Solution**: Occlusions were handled by annotating images where there were heavy occlusions and the usage of Yolov7 also helped.
